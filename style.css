@@ -2,20 +2,32 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
+
 }
 
 main {
     background: url(media/bg.jpg);
     font-family: Ancizar Sans;
+    section{
+        scroll-margin-top: 90px;
+    }
 }
 
 header {
-    background-color: rgba(161, 62, 140, 0.973);
+    background-color: rgba(161, 62, 140);
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding: 5px 7%;
     height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    scroll-behavior: smooth;
+    box-shadow: 1px 1px 100px rgba(70, 29, 61, 0.411);
 }
 
 header a {
@@ -46,7 +58,7 @@ header img {
 }
 
 .home {
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     background-color: rgba(161, 62, 140);
     display: flex;
@@ -72,8 +84,37 @@ header img {
 .gap {
     background: url(media/bg.jpg) fixed;
     background-size: cover;
-    padding: 5%;
-    filter: brightness(50%) blur(1px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 25vh;
+
+    /*filter: brightness(50%) blur(1px);*/
+}
+
+.gap .photo {
+    position: absolute;
+    height: 25vh;
+}
+
+.gap .overlay {
+    position: absolute;
+    background: linear-gradient(rgba(0, 0, 0, 0.678));
+    width: 100%;
+    height: 25vh;
+    justify-content: center;
+    align-items: center;
+    text-shadow: #FBFBFB;
+}
+
+.overlay p {
+    margin-top: 80px;
+    text-align: center;
+    color: #FBFBFB;
+    font-size: 35px;
+    letter-spacing: 1px;
+
 }
 
 .featurestext {
@@ -84,6 +125,7 @@ header img {
     text-align: center;
     color: #FBFBFB;
     font-size: 40px;
+    padding-top: 20px;
 }
 
 .featurestext p {
@@ -93,13 +135,13 @@ header img {
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 25px;
+    line-height: 30px;
     text-align: center;
 }
 
 .features-section {
     background-color: rgb(161, 62, 140);
-    height: 120vh;
+    height: 110vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -155,7 +197,7 @@ header img {
 
 .download {
     padding-top: 40px;
-    height: 40vh;
+    height: 36vh;
     display: flex;
     justify-content: center;
     background-color: #FBFBFB;
@@ -197,7 +239,7 @@ header img {
 
 .downloadbtn {
     a {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 600;
         letter-spacing: 0.5px;
     }
@@ -243,18 +285,20 @@ header img {
 .card {
     display: flex;
     background-color: #FBFBFB;
-    width: 350px;
-    height: 500px;
+    width: 300px;
+    height: 450px;
     flex-direction: column;
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid #FBFBFB;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.603);
+    transition: all 250ms;
+
 
     p,
     li {
-        font-size: 20px;
-        padding: 10px 20px;
+        font-size: 18px;
+        padding: 8px 20px;
         font-weight: 600;
     }
 
@@ -266,6 +310,10 @@ header img {
     }
 }
 
+.card:hover {
+    transform: translateX(20px);
+}
+
 .subscribe {
     display: flex;
     justify-content: center;
@@ -275,10 +323,11 @@ header img {
     padding: 20px;
     border-radius: 20px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     letter-spacing: 0.6px;
     color: #FBFBFB;
+    width: 9rem;
     transition: all 500ms 100ms;
 
 }
@@ -289,7 +338,7 @@ header img {
 }
 
 .plan {
-    font-size: 25px;
+    font-size: 22px;
     text-align: center;
     background-color: rgba(161, 62, 140);
     padding: 25px 0;
@@ -306,14 +355,14 @@ header img {
 }
 
 footer {
-    height: 20vh;
+    height: 15vh;
 }
 
 footer img {
-    width: 40px;
-    background-color: #A64D79;
-    padding: 5px;
-    margin: 20px;
+    width: 35px;
+    background-color: rgba(161, 62, 140, 0.973);
+    padding: 4px;
+    margin: 15px;
     border-radius: 50%;
     transition: all 400ms 100ms;
 
@@ -328,7 +377,6 @@ footer img {
 
 .icon:hover {
     background-color: black;
-    color: #A64D79;
 }
 
 .footertext {
